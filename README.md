@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-# CROWD
+
+# CROWD OVM-BASED VARIABILITY
 
 * `web-src` : Web directory for Apache or Nginx web server.
 
@@ -100,6 +100,5 @@ Images :
 
 * Traffic Lights downloaded from OpenClipart at: https://openclipart.org/detail/195669/green-traffic-light
 =======
-# crowd-variability
-OVM in crowd
->>>>>>> b1f74cdaafa47073db111034f62ed1360e6b9057
+
+
