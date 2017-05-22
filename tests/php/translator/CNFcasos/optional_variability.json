@@ -1,0 +1,16 @@
+{
+  "Datasheet" : {
+    "id" : "service mandatoryEjemplo",
+    "service" : {
+      "name" : "A",
+      "GlobalVariationPoint" : {
+        "OptionalVP" : {
+          "service" : [
+             { "name" : "B1" },
+             { "name" : "B2" }
+          ]
+        }
+      }
+    }
+  }
+}
