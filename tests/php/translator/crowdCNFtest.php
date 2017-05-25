@@ -24,10 +24,10 @@
 require_once("common.php");
 
 // use function \load;
-load("crowd_CNF.php", "wicom/translator/strategies/ovmstrategy/");
+load("crowd_CNF.php", "wicom/translator/ovmstrategy/");
 load("owllinkbuilder.php", "wicom/translator/builders/");
 
-use Wicom\Translator\Strategies\UMLcrowd;
+use Wicom\Translator\OVMStrategies\CNFcrowd;
 use Wicom\Translator\Builders\OWLlinkBuilder;
 
 /**
@@ -40,50 +40,6 @@ use Wicom\Translator\Builders\OWLlinkBuilder;
 
 class UMLcrowdTest extends PHPUnit_Framework_TestCase
 {
-
-
-/*    public function testTranslate(){
-        //TODO: Complete JSON!
-        $json = <<<'EOT'
-{
-"classes": [{"attrs":[], "methods":[], "name": "Hi World"}],
-"links": []
-}
-EOT;
-        //TODO: Complete XML!
-        $expected = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>
-<RequestMessage xmlns=\"http://www.owllink.org/owllink#\"
-xmlns:owl=\"http://www.w3.org/2002/07/owl#\"
-xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"
-xsi:schemaLocation=\"http://www.owllink.org/owllink# http://www.owllink.org/owllink-20091116.xsd\">
-       <CreateKB kb=\"http://localhost/kb1\" />
-       <Tell kb=\"http://localhost/kb1\">
-       		<owl:SubClassOf>
-       		<owl:Class IRI=\"Hi World\" />
-       		<owl:Class abbreviatedIRI=\"owl:Thing\" />
-       		</owl:SubClassOf>
-       </Tell>
-</RequestMessage>";
-
-        $strategy = new UMLcrowd();
-        $builder = new OWLlinkBuilder();
-
-        $builder->insert_header(); // Without this, loading the DOMDocument
-        // will throw error for the owl namespace
-        $strategy->translate($json, $builder);
-        $builder->insert_footer();
-
-        $actual = $builder->get_product();
-        $actual = $actual->to_string();
-
-        //$expected = process_xmlspaces($expected);
-        //$actual = process_xmlspaces($actual);
-        // Don't use assertEqualXMLStructure()! It won't check for attributes values!
-        $this->assertXmlStringEqualsXmlString($expected, $actual, true);
-    }
-*/
-
-
 
     ##
     # Test if translate works properly with binary roles many-to-many
