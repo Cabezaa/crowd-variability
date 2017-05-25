@@ -3,7 +3,7 @@
 
 # Copyright 2016 Giménez, Christian
 
-# Author: Giménez, Christian   
+# Author: Giménez, Christian
 
 # install.fish
 
@@ -20,7 +20,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-set requirements "npm" "nodejs" "coffee"
+set requirements "npm" "node" "coffee"
 set optional "phpunit" "Executes PHP tests" "doxygen" "Compiles PHP documentation" "doxywizard" "Configure Doxygen documentation compiler"
 
 function status --description 'Display a status messages on the terminal.'
@@ -59,15 +59,15 @@ end
 function show-help --description 'Show a helpful text for the user.'
 	echo '
 ./install.fish
-	
-Install the CROWD. Will create and check for necessary files and permissions. 
+
+Install the CROWD. Will create and check for necessary files and permissions.
 '
 end
 
 function check-requirements --description 'Check for the existence of some programs'
 	status "Checking for required software..."
 	set problem 0
-		
+
 	for req in $requirements
 		if which $req > /dev/null
 			show-icon "✓"
@@ -78,7 +78,7 @@ function check-requirements --description 'Check for the existence of some progr
 			error "$req is not founded! Please install it."
 		end
 	end
-	
+
 	status "Checking for optional software..."
 	echo "This software is not needed for running CROWD, but you'll need it if you want to develop."
 	set desc 0
@@ -112,4 +112,4 @@ create-tempfiles
 install-config
 
 status "Compiling CoffeeScripts into Javascript..."
-scripts/compilar-coffee.sh
+scripts/compile-coffee.fish
